@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 92 20'%3E%3Cg fill='%23ee6177'%3E%3Ccircle cx='10' cy='10' r='9'/%3E%3Ccircle cx='34' cy='10' r='9'/%3E%3Ccircle cx='58' cy='10' r='9'/%3E%3Ccircle cx='82' cy='10' r='9'/%3E%3C/g%3E%3C/svg%3E">
+<style>[hidden]{display:none!important} img{max-width:100%}</style>
+<title>Portafolio Fabián Olmedo</title>
+<meta name="description" content="Portafolio de diseño gráfico de Fabián Olmedo Arriola: campañas, logos, motion graphics e ilustraciones.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Outfit:wght@300;400;500;600&display=swap">
+<style>
+/* Layout concept: the portfolio PDF carried over to the web. A near-black ground, one coral accent,
+   extra-wide Archivo for headings and Outfit Light for text. Dots, waves and diagonal stripes from the
+   slides punctuate each section. Works open in a full-screen viewer so the art stays the loudest thing. */
+:root {
+  --bg: #151515;
+  --surface: #1f1f21;
+  --fg: #f6f3f4;
+  --soft: #d6d1d4;
+  --muted: #a39ea1;
+  --accent: #ee6177;
+  --accent-ink: #151515;
+  --line: rgba(255, 255, 255, .16);
+  --ov-bg: #0c0c0d;
+  --ov-fg: #f6f3f4;
+  --ov-muted: #b4afb2;
+  --ov-accent: #ee6177;
+  --f-display: 'Archivo', 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
+  --f-body: 'Outfit', 'Segoe UI', system-ui, sans-serif;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f6f4f5; --surface: #ffffff; --fg: #151515; --soft: #2f2b2d; --muted: #625d60;
+    --accent: #c42f49; --accent-ink: #ffffff; --line: rgba(21, 21, 21, .18);
+    color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #f6f4f5; --surface: #ffffff; --fg: #151515; --soft: #2f2b2d; --muted: #625d60;
+  --accent: #c42f49; --accent-ink: #ffffff; --line: rgba(21, 21, 21, .18);
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 300 1.0625rem/1.65 var(--f-body);
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  background: var(--bg); z-index: 60;
+}
+img { display: block; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+section[id] { scroll-margin-top: calc(56px + env(safe-area-inset-top, 0px)); }
+.vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.wrap {
+  max-width: 1240px; margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.deco { display: block; color: var(--fg); flex: none; }
+.deco.accent { color: var(--accent); }
+.dots { width: 70px; height: 15px; }
+.waves { width: 84px; height: 51px; }
+.stripes { width: clamp(64px, 9vw, 96px); height: clamp(64px, 9vw, 96px); }
+
+/* Header */
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 40; background: var(--bg); border-bottom: 1px solid var(--line); }
+.bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 56px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font: 800 .8rem var(--f-display); font-stretch: 125%; text-transform: uppercase; letter-spacing: .04em; }
+.brand .dots { width: 44px; height: 9.5px; }
+.nav { display: flex; gap: clamp(14px, 3vw, 32px); }
+.nav a { text-decoration: none; padding: .6rem 0; border-bottom: 2px solid transparent; font: 500 .8rem var(--f-body); text-transform: uppercase; letter-spacing: .12em; transition: border-color .2s; }
+.nav a:hover { border-color: var(--accent); }
+@media (max-width: 520px) { .brand-txt { display: none; } .nav { width: 100%; justify-content: space-between; } }
+
+/* Presentación */
+.hero { padding-block: clamp(36px, 6vw, 80px) clamp(28px, 4vw, 56px); }
+.hero-grid { display: grid; gap: clamp(28px, 4vw, 44px); grid-template-columns: minmax(0, 1fr); }
+.name { margin: 0; font: 900 clamp(2.2rem, 13vw, 5rem)/.98 var(--f-display); font-stretch: 125%; text-transform: uppercase; }
+.name span { display: block; }
+.role { margin: .9rem 0 1.2rem; color: var(--accent); font: 400 clamp(1.05rem, 2.6vw, 1.5rem)/1.2 var(--f-body); text-transform: uppercase; letter-spacing: .03em; }
+.hero-photo { position: relative; margin: 0; }
+.hero-photo img { width: 100%; height: auto; border-radius: 4px; }
+.hero-photo .stripes { position: absolute; right: -6px; bottom: -22px; color: var(--accent); }
+.outline {
+  margin: 0; text-align: center; white-space: nowrap; text-transform: uppercase;
+  font: 900 clamp(2.3rem, 9.6vw, 7.6rem)/1 var(--f-display); font-stretch: 125%;
+  color: transparent; -webkit-text-stroke: clamp(1px, .18vw, 2px) var(--fg);
+}
+@media (min-width: 860px) {
+  .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); align-items: center; }
+  .name { font-size: clamp(3rem, 6.6vw, 5.8rem); }
+  .outline { grid-column: 1 / -1; }
+}
+
+.about { padding-block: clamp(36px, 7vw, 96px); }
+.about-grid { display: grid; gap: clamp(32px, 5vw, 64px); grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 860px) { .about-grid { grid-template-columns: minmax(0, .72fr) minmax(0, 1.6fr); align-items: start; } }
+.about-photo { position: relative; margin: 0; max-width: 340px; }
+.about-photo .dots { margin-bottom: 14px; }
+.about-photo img { width: 100%; height: auto; border-radius: 2px; }
+.about-photo .stripes { position: absolute; left: -6px; bottom: -22px; }
+.hello { margin: 0 0 1.3rem; line-height: 1; }
+.hello small { display: block; color: var(--accent); font: 700 clamp(1.6rem, 4.5vw, 2.8rem)/1.05 var(--f-display); font-stretch: 112%; }
+.hello strong { display: block; font: 900 clamp(2.4rem, 7vw, 4.6rem)/1.05 var(--f-display); font-stretch: 125%; }
+.bio p { margin: 0 0 1em; max-width: 64ch; color: var(--soft); }
+.bio b { font-weight: 600; color: var(--fg); }
+.lbl { margin: 0; font: 800 1rem/1.2 var(--f-display); font-stretch: 125%; text-transform: uppercase; letter-spacing: .02em; }
+.study { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem 1.1rem; margin-block: 1.8rem; }
+.study p { margin: 0; }
+.study small { display: block; color: var(--muted); font-size: .9rem; }
+.facts { display: grid; gap: 28px; margin-top: clamp(24px, 4vw, 40px); }
+.facts > div { display: grid; align-content: start; gap: 16px; min-width: 0; }
+.facts > div + div { padding-top: 24px; border-top: 1px solid var(--line); }
+@media (min-width: 700px) {
+  .facts { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) minmax(0, .8fr); gap: 0; }
+  .facts > div { padding-inline: 24px; }
+  .facts > div:first-child { padding-left: 0; }
+  .facts > div + div { padding-top: 0; border-top: 0; border-left: 3px solid var(--accent); }
+}
+.xp { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
+.xp li { display: grid; gap: 1px; }
+.xp .when { color: var(--accent); font: 500 .78rem var(--f-body); letter-spacing: .08em; text-transform: uppercase; }
+.xp strong { font: 800 1rem/1.25 var(--f-display); font-stretch: 112%; }
+.xp .where { color: var(--soft); font-size: .95rem; line-height: 1.45; }
+.xp .sub { color: var(--muted); font-size: .85rem; }
+.skills { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; color: var(--soft); font-size: .98rem; line-height: 1.4; }
+.skills li::before { content: "– "; color: var(--accent); }
+.chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.chips li { padding: .35rem .8rem; border: 1.5px solid var(--line); border-radius: 999px; font: 500 .85rem var(--f-body); }
+
+/* Trabajos */
+.works { padding-block: clamp(48px, 8vw, 112px); border-top: 1px solid var(--line); }
+.sec-head { display: grid; gap: .7rem; margin-bottom: clamp(24px, 4vw, 40px); }
+.sec-title { margin: 0; font: 900 clamp(2.4rem, 10vw, 6rem)/.95 var(--f-display); font-stretch: 125%; text-transform: uppercase; }
+.sec-sub { margin: 0; color: var(--accent); font: 400 clamp(.95rem, 2.2vw, 1.2rem)/1.3 var(--f-body); text-transform: uppercase; letter-spacing: .04em; }
+.tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: clamp(20px, 3vw, 32px); }
+.tab { padding: .7rem 1.15rem; border: 1.5px solid var(--line); border-radius: 999px; font: 700 .78rem var(--f-display); font-stretch: 112%; text-transform: uppercase; letter-spacing: .06em; transition: background .2s, color .2s, border-color .2s; }
+.tab:hover { border-color: var(--fg); }
+.tab[aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.panel-note { margin: 0 0 22px; max-width: 62ch; color: var(--muted); }
+.panel.anim { animation: rise .35s ease both; }
+@keyframes rise { from { opacity: 0; transform: translateY(8px); } }
+.sub-h { margin: 0 0 18px; font: 800 1rem/1.2 var(--f-display); font-stretch: 125%; text-transform: uppercase; letter-spacing: .02em; }
+
+.grid { list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(16px, 2.2vw, 24px) clamp(12px, 1.6vw, 18px); grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (min-width: 720px) { .grid-logos, .grid-ilus { grid-template-columns: repeat(3, minmax(0, 1fr)); } .grid-ilus { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .grid-camp { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+.card { display: block; width: 100%; text-align: left; }
+.thumb { position: relative; display: block; aspect-ratio: 4 / 5; overflow: hidden; background: var(--surface); border-radius: 4px; }
+.thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s cubic-bezier(.2, .7, .2, 1); }
+.thumb::after {
+  content: "Ver campaña"; position: absolute; left: 10px; bottom: 10px; padding: .35rem .75rem; border-radius: 999px;
+  background: var(--accent); color: var(--accent-ink); font: 700 .68rem var(--f-display); font-stretch: 112%; text-transform: uppercase; letter-spacing: .06em;
+  opacity: 0; transform: translateY(6px); transition: opacity .25s, transform .25s;
+}
+.card:hover .thumb img, .card:focus-visible .thumb img, .logo-tile:hover img, .ilu:hover img { transform: scale(1.04); }
+.card:hover .thumb::after, .card:focus-visible .thumb::after { opacity: 1; transform: none; }
+.cap { display: grid; gap: 2px; padding-top: 12px; }
+.cap .t { font: 800 .8rem/1.2 var(--f-display); font-stretch: 118%; text-transform: uppercase; letter-spacing: .02em; text-wrap: balance; }
+.cap .b { color: var(--muted); font-size: .9rem; }
+.cap .g { color: var(--accent); font: 500 .74rem/1.35 var(--f-body); letter-spacing: .06em; text-transform: uppercase; }
+
+.logo-tile { display: block; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 4px; background: #151515; }
+.logo-tile[data-bg="w"] { background: #fff; }
+.logo-tile img { width: 100%; height: 100%; object-fit: contain; transition: transform .5s cubic-bezier(.2, .7, .2, 1); }
+.lcap { margin: 10px 0 0; font: 800 .8rem/1.2 var(--f-display); font-stretch: 118%; text-transform: uppercase; letter-spacing: .02em; }
+.ilu { display: block; width: 100%; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 4px; background: var(--surface); }
+.ilu img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s cubic-bezier(.2, .7, .2, 1); }
+
+.mundial { display: grid; gap: 16px; margin-top: clamp(36px, 5vw, 64px); }
+@media (min-width: 860px) { .mundial { grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); align-items: start; } }
+.mundial .m-photo { display: block; width: 100%; overflow: hidden; border-radius: 4px; background: var(--surface); }
+.mundial .m-photo img { width: 100%; height: auto; }
+.m-side { display: grid; gap: 16px; align-content: start; }
+.m-side .m-photo { background: #000; }
+.m-side h3 { margin: 0; font: 900 clamp(1.4rem, 3vw, 2rem)/1.05 var(--f-display); font-stretch: 125%; text-transform: uppercase; }
+.m-side p { margin: 0; color: var(--soft); max-width: 44ch; }
+
+.slots { display: grid; gap: 14px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 720px) { .slots { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.slot { display: grid; place-content: center; justify-items: center; gap: 12px; aspect-ratio: 16 / 9; padding: 16px; border: 1.5px dashed var(--line); border-radius: 4px; color: var(--muted); text-align: center; }
+.slot svg { width: 44px; height: 44px; color: var(--accent); }
+.slot span { font: 500 .78rem var(--f-body); letter-spacing: .08em; text-transform: uppercase; }
+
+/* Contacto */
+.contact { padding-block: clamp(56px, 9vw, 128px); border-top: 1px solid var(--line); }
+.contact .sec-title { max-width: 12ch; }
+.contact-grid { display: grid; gap: clamp(28px, 4vw, 48px); margin-top: clamp(28px, 4vw, 44px); }
+@media (min-width: 860px) { .contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.c-item { display: grid; align-content: start; gap: 14px; padding-top: 18px; border-top: 1px solid var(--line); min-width: 0; }
+.c-val { margin: 0; font: 900 clamp(1.5rem, 4.2vw, 2.6rem)/1.1 var(--f-display); font-stretch: 112%; overflow-wrap: anywhere; }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.btn { display: inline-flex; align-items: center; gap: .5rem; padding: .8rem 1.3rem; border: 1.5px solid transparent; border-radius: 999px; text-decoration: none; font: 700 .78rem var(--f-display); font-stretch: 112%; text-transform: uppercase; letter-spacing: .06em; transition: background .2s, border-color .2s; }
+.btn svg { width: 16px; height: 16px; }
+.btn-main { background: var(--accent); color: var(--accent-ink); }
+.btn-main:hover { filter: brightness(1.08); }
+.btn-ghost { border-color: var(--line); color: var(--fg); }
+.btn-ghost:hover { border-color: var(--fg); }
+.copied { color: var(--muted); font-size: .9rem; min-height: 1.4em; }
+
+.foot { border-top: 1px solid var(--line); padding-block: 28px; }
+.foot .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; color: var(--muted); font-size: .9rem; }
+.foot .waves { width: 60px; height: 36px; color: var(--accent); }
+
+/* Visor */
+.lb { position: fixed; inset: 0; z-index: 70; overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; background: var(--ov-bg); color: var(--ov-fg); }
+.lb-in { max-width: 1360px; min-height: 100%; margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-bottom: max(28px, env(safe-area-inset-bottom, 0px)); }
+.lb-top { position: sticky; top: 0; z-index: 2; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding-top: max(14px, env(safe-area-inset-top, 0px)); padding-bottom: 16px; background: var(--ov-bg); }
+.lb-meta { margin: 0 0 6px; color: var(--ov-accent); font: 500 .78rem/1.4 var(--f-body); letter-spacing: .08em; text-transform: uppercase; }
+.lb-title { margin: 0; font: 900 clamp(1.3rem, 3.4vw, 2.2rem)/1.05 var(--f-display); font-stretch: 125%; text-transform: uppercase; text-wrap: balance; }
+.lb-sub { margin: 8px 0 0; color: var(--ov-muted); }
+.lb-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.lb-tab { padding: .55rem 1.05rem; border: 1.5px solid rgba(255, 255, 255, .28); border-radius: 999px; color: var(--ov-fg); font: 700 .72rem var(--f-display); font-stretch: 112%; text-transform: uppercase; letter-spacing: .06em; transition: background .2s, color .2s, border-color .2s; }
+.lb-tab:hover { border-color: var(--ov-fg); }
+.lb-tab[aria-pressed="true"] { background: var(--ov-accent); border-color: var(--ov-accent); color: #151515; }
+.lb-actions { display: flex; gap: 8px; flex: none; }
+.ibtn { display: grid; place-items: center; width: 44px; height: 44px; border: 1.5px solid rgba(255, 255, 255, .28); border-radius: 50%; color: var(--ov-fg); transition: background .2s; }
+.ibtn:hover { background: rgba(255, 255, 255, .12); }
+.ibtn svg { width: 20px; height: 20px; }
+.lb-body { display: grid; gap: 22px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 900px) { .lb-body.two, .lb-body.text { grid-template-columns: var(--cols, minmax(0, 4fr) minmax(0, 7fr)); align-items: start; } }
+.lb-body.text .lb-text { order: -1; min-width: 0; }
+@media (min-width: 900px) { .lb-body.text .lb-text { order: 0; padding-top: 4px; } }
+.lb-text h4 { margin: 0 0 6px; font: 900 clamp(1.2rem, 2.6vw, 1.7rem)/1.1 var(--f-display); font-stretch: 125%; text-transform: uppercase; }
+.lb-text .lead { margin: 0 0 22px; color: var(--ov-accent); font: 500 .8rem/1.4 var(--f-body); letter-spacing: .08em; text-transform: uppercase; }
+.lb-text .txt { margin: 0 0 1em; max-width: 58ch; font-size: 1.125rem; line-height: 1.7; }
+.lb-text .txt.empty { color: var(--ov-muted); }
+.lb-body.one { justify-items: center; }
+.lb-body figure { margin: 0; min-width: 0; }
+.lb-body img { width: 100%; height: auto; border-radius: 4px; background: #222; }
+.lb-body.one img { width: auto; max-width: 100%; max-height: calc(100vh - 150px); }
+.lb-body figcaption { margin-top: 10px; color: var(--ov-muted); font: 500 .74rem var(--f-body); letter-spacing: .08em; text-transform: uppercase; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+</style>
+
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="s-dots" viewBox="0 0 92 20"><g fill="currentColor"><circle cx="10" cy="10" r="9"/><circle cx="34" cy="10" r="9"/><circle cx="58" cy="10" r="9"/><circle cx="82" cy="10" r="9"/></g></symbol>
+  <symbol id="s-waves" viewBox="0 0 114 70"><g fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round"><path d="M3 8q9-10 18 0t18 0t18 0t18 0t18 0t18 0"/><path d="M3 26q9-10 18 0t18 0t18 0t18 0t18 0t18 0"/><path d="M3 44q9-10 18 0t18 0t18 0t18 0t18 0t18 0"/><path d="M3 62q9-10 18 0t18 0t18 0t18 0t18 0t18 0"/></g></symbol>
+  <symbol id="s-stripes" viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"><path d="M2 40L40 2M2 62L62 2M2 84L84 2M8 98L98 8M30 98L98 30M52 98L98 52M74 98L98 74"/></g></symbol>
+  <symbol id="s-prev" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="s-next" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="s-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="s-out" viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="s-play" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M19 15l16 9-16 9z" fill="currentColor"/></symbol>
+</svg>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#presentacion" aria-label="Fabián Olmedo, inicio">
+      <svg class="deco dots" aria-hidden="true"><use href="#s-dots"/></svg>
+      <span class="brand-txt">Fabián Olmedo</span>
+    </a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="#presentacion">Presentación</a>
+      <a href="#trabajos">Trabajos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="presentacion">
+    <div class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <h1 class="name"><span>Fabián</span><span>Olmedo</span><span>Arriola</span></h1>
+          <p class="role">Diseñador gráfico</p>
+          <svg class="deco dots" aria-hidden="true"><use href="#s-dots"/></svg>
+        </div>
+        <figure class="hero-photo">
+          <img src="img/hero.jpg" width="1225" height="636" alt="Fabián frente al espejo con el celular tapándole la cara, con campera de lona color mostaza y gris">
+          <svg class="deco stripes" aria-hidden="true"><use href="#s-stripes"/></svg>
+        </figure>
+        <p class="outline" aria-hidden="true">Portafolio</p>
+      </div>
+    </div>
+
+    <div class="about">
+      <div class="wrap about-grid">
+        <figure class="about-photo">
+          <svg class="deco dots" aria-hidden="true"><use href="#s-dots"/></svg>
+          <img src="img/about.jpg" width="586" height="919" loading="lazy" alt="Fabián con campera de cuero negra sobre un fondo rosa coral">
+          <svg class="deco stripes" aria-hidden="true"><use href="#s-stripes"/></svg>
+        </figure>
+        <div>
+          <h2 class="hello"><small>Hola, soy</small><strong>Fabián:</strong></h2>
+          <div class="bio">
+            <p>Tengo 28 años y, durante los últimos años, he adquirido una sólida experiencia en el área del diseño, desempeñándome como <b>Diseñador Gráfico Sr.</b> en el rubro de supermercados mayoristas. He desarrollado materiales para campañas publicitarias, redes sociales, key visuals, cartelería para vía pública (impresa y en video), material animado para pantallas de eventos sociales y cartelería de uso interno.</p>
+            <p>Me caracteriza una gran motivación por seguir perfeccionando mis habilidades y continuar creciendo profesionalmente.</p>
+          </div>
+          <div class="study">
+            <h3 class="lbl">Estudios:</h3>
+            <p>Licenciatura en Comunicación y Diseño Gráfico<small>Universidad Politécnica y Artística del Paraguay</small></p>
+          </div>
+          <div class="facts">
+            <div>
+              <h3 class="lbl">Experiencia:</h3>
+              <ol class="xp">
+                <li><span class="when">2023 – 2025</span><strong>Diseñador Gráfico</strong><span class="where">Supermercado Box Mayorista</span><span class="sub">Jr. 2023–2024 · Sr. 2024–2025</span></li>
+                <li><span class="when">Nov. 2025 – Dic. 2025</span><strong>Jefe de Diseño</strong><span class="where">Supermercado Box Mayorista, Supermercado Los Jardines, Aho Aho Comercial</span></li>
+                <li><span class="when">2025 – actualidad</span><strong>Diseñador Gráfico Sr.</strong><span class="where">Supermercado STOCK, Superseis, Delimarket</span></li>
+              </ol>
+            </div>
+            <div>
+              <h3 class="lbl">Habilidades</h3>
+              <ul class="skills">
+                <li>Diseño de Key Visual</li>
+                <li>Diseño para redes sociales</li>
+                <li>Diseño de volantes impresos</li>
+                <li>Cartelería para vía pública</li>
+                <li>Materiales animados para pantallas</li>
+                <li>Edición de imágenes</li>
+                <li>Fotografía</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="lbl">Software</h3>
+              <ul class="chips">
+                <li>Photoshop</li><li>Illustrator</li><li>After Effects</li><li>Canva</li><li>Meta</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="trabajos" class="works">
+    <div class="wrap">
+      <header class="sec-head">
+        <svg class="deco dots accent" aria-hidden="true"><use href="#s-dots"/></svg>
+        <h2 class="sec-title">Diseños</h2>
+        <p class="sec-sub">Redes sociales, key visual, logo e ilustraciones</p>
+      </header>
+
+      <div class="tabs" role="tablist" aria-label="Categorías de trabajos">
+        <button class="tab" role="tab" type="button" id="tab-campanas" data-tab="campanas" aria-controls="panel-campanas" aria-selected="true">Campañas</button>
+        <button class="tab" role="tab" type="button" id="tab-logos" data-tab="logos" aria-controls="panel-logos" aria-selected="false" tabindex="-1">Logos</button>
+        <button class="tab" role="tab" type="button" id="tab-motion" data-tab="motion" aria-controls="panel-motion" aria-selected="false" tabindex="-1">Motion graphics</button>
+        <button class="tab" role="tab" type="button" id="tab-ilustraciones" data-tab="ilustraciones" aria-controls="panel-ilustraciones" aria-selected="false" tabindex="-1">Ilustraciones</button>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-campanas" data-panel="campanas" aria-labelledby="tab-campanas">
+        <p class="panel-note">Key visual, logo de campaña y piezas para redes sociales para Box Mayorista y Stock Supermercados. Tocá una campaña para ver todas sus piezas.</p>
+        <ul class="grid grid-camp" id="grid-campanas"></ul>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-logos" data-panel="logos" aria-labelledby="tab-logos" hidden>
+        <p class="panel-note">Logotipos de campaña ilustrados, pensados para cartelería, redes y material en punto de venta.</p>
+        <ul class="grid grid-logos" id="grid-logos"></ul>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-motion" data-panel="motion" aria-labelledby="tab-motion" hidden>
+        <p class="panel-note">Próximamente. Acá se van a ver las piezas animadas para pantallas de eventos, la cartelería en video y los clips para redes.</p>
+        <div class="slots">
+          <div class="slot"><svg aria-hidden="true"><use href="#s-play"/></svg><span>Animación para pantallas</span></div>
+          <div class="slot"><svg aria-hidden="true"><use href="#s-play"/></svg><span>Cartelería en video</span></div>
+          <div class="slot"><svg aria-hidden="true"><use href="#s-play"/></svg><span>Clip para redes</span></div>
+        </div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-ilustraciones" data-panel="ilustraciones" aria-labelledby="tab-ilustraciones" hidden>
+        <h3 class="sub-h">Ilustración · Estilo vectorial</h3>
+        <ul class="grid grid-ilus" id="grid-ilus"></ul>
+        <div class="mundial">
+          <button class="m-photo" type="button" data-set="ilustraciones" data-i="4">
+            <img src="img/m-foto.jpg" loading="lazy" alt="Termos y vasos negros con el yaguareté y el lema #VamosParaguay sobre el césped de un estadio">
+          </button>
+          <div class="m-side">
+            <button class="m-photo" type="button" data-set="ilustraciones" data-i="4">
+              <img src="img/m-logos.jpg" loading="lazy" alt="Dos versiones de la ilustración del yaguareté con la bandera de Paraguay y el texto #VamosParaguay">
+            </button>
+            <h3>Campaña Mundialista 2026</h3>
+            <p>Diseño e ilustración de coleccionables para Stock Supermercados.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="contact">
+    <div class="wrap">
+      <header class="sec-head">
+        <svg class="deco dots accent" aria-hidden="true"><use href="#s-dots"/></svg>
+        <h2 class="sec-title">¡Gracias por ver!</h2>
+        <p class="sec-sub">No dudes en contactarme.</p>
+      </header>
+      <div class="contact-grid">
+        <div class="c-item">
+          <h3 class="lbl">Contacto</h3>
+          <p class="c-val" id="phone">0984 45 98 76</p>
+          <div class="actions">
+            <a class="btn btn-main" href="https://wa.me/595984459876" target="_blank" rel="noopener">Escribir por WhatsApp <svg aria-hidden="true"><use href="#s-out"/></svg></a>
+            <button class="btn btn-ghost" type="button" id="copy-phone">Copiar número</button>
+          </div>
+          <p class="copied" id="copied" role="status" aria-live="polite"></p>
+        </div>
+        <div class="c-item">
+          <h3 class="lbl">Redes</h3>
+          <p class="c-val">@olmed19_23</p>
+          <div class="actions">
+            <a class="btn btn-main" href="https://www.instagram.com/olmed19_23/" target="_blank" rel="noopener">Ver Instagram <svg aria-hidden="true"><use href="#s-out"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>Fabián Olmedo Arriola · Diseñador gráfico · Paraguay</span>
+    <svg class="deco waves" aria-hidden="true"><use href="#s-waves"/></svg>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-labelledby="lb-title" hidden>
+  <div class="lb-in" id="lb-in">
+    <div class="lb-top">
+      <div>
+        <p class="lb-meta" id="lb-meta"></p>
+        <h3 class="lb-title" id="lb-title"></h3>
+        <p class="lb-sub" id="lb-sub" hidden></p>
+        <div class="lb-tabs" id="lb-tabs" role="group" aria-label="Secciones de la campaña" hidden></div>
+      </div>
+      <div class="lb-actions">
+        <button class="ibtn" type="button" id="lb-prev" aria-label="Anterior"><svg aria-hidden="true"><use href="#s-prev"/></svg></button>
+        <button class="ibtn" type="button" id="lb-next" aria-label="Siguiente"><svg aria-hidden="true"><use href="#s-next"/></svg></button>
+        <button class="ibtn" type="button" id="lb-close" aria-label="Cerrar"><svg aria-hidden="true"><use href="#s-close"/></svg></button>
+      </div>
+    </div>
+    <div class="lb-body" id="lb-body"></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var IMG = function (n) { return 'img/' + n + '.jpg'; };
+  var $ = function (s) { return document.querySelector(s); };
+  var KV_COLS = 'minmax(0, 4fr) minmax(0, 7fr)';
+
+  /* ---------- Datos ---------- */
+  var CAMPS = [
+    ['Día del Niño', 'Box Mayorista', ['Key visual', 'Logo', 'Redes'], 'dia-nino', ''],
+    ['Promo Fin de Año', 'Box Mayorista', ['Key visual', 'Logo', 'Redes', 'Materiales POP'], 'fin-anio', 'Motivos para celebrar, razones para ganar'],
+    ['Día de la Amistad', 'Box Mayorista', ['Key visual', 'Logo', 'Redes'], 'amistad', ''],
+    ['Colonia de Vacaciones', 'Box Mayorista', ['Key visual', 'Logo', 'Redes'], 'colonia', ''],
+    ['Promo Mamá y Papá', 'Box Mayorista', ['Key visual', 'Logo', 'Redes'], 'mama-papa', '100 razones para celebrar a Mamá y Papá'],
+    ['Dulce Halloween', 'Box Mayorista', ['Key visual', 'Logo', 'Redes'], 'halloween', ''],
+    ['Beauty Day', 'Box Mayorista', ['Key visual', 'Logo', 'Redes'], 'beauty-day', 'Una experiencia creada para vos'],
+    ['Día de los Enamorados', 'Stock Supermercados', ['Key visual', 'Logo', 'Redes'], 'enamorados', 'Tu Duo perfecto para enamorar'],
+    ['Pascuas', 'Stock Supermercados', ['Key visual', 'Logo', 'Redes', 'Folleto'], 'pascuas', ''],
+    ['Día del Padre / Mundial', 'Stock Supermercados', ['Key visual', 'Logo', 'Redes', 'Folleto'], 'dia-padre', 'Lo mejor para el Super Papá']
+  ];
+  var LOGOS = [
+    ['Dulce Pascua', 'pascua', 'd'], ['Super Promo de Verano', 'verano', 'd'], ['Vuelta a Clases', 'clases', 'd'],
+    ['San Juan', 'san-juan', 'w'], ['Precios Bajos', 'precios-bajos', 'w'], ['Primavera', 'primavera', 'w']
+  ];
+  var ILUS = [
+    'Ilustración vectorial de un hombre con saco celeste apoyado contra una pared de ladrillos',
+    'Ilustración vectorial de una mujer de cabello rizado con vestido negro frente a un atardecer',
+    'Ilustración vectorial de Dita Von Teese con guantes verdes con flores frente a un círculo naranja',
+    'Ilustración vectorial de una mujer con pañuelo en la cabeza sentada a una mesa con mandarinas y una taza'
+  ];
+
+  /* Textos de cada campaña. ctx = contexto y descripción, insp = inspiración y dirección creativa.
+     Separá los párrafos con \n\n. Si insp queda vacío se muestra un aviso de "próximamente". */
+  var TEXT = {
+    'dia-nino': { insp: '', ctx: 'Campaña del Mes del Niño de Box Mayorista, con una estética de mundo de bloques. Combinó una fiesta con personajes, juegos y actividades en el local de Mariano Roque Alonso (entrada libre y gratuita) con promociones en golosinas, jugos y gaseosas hasta el 17 de agosto.' },
+    'fin-anio': { insp: '', ctx: 'Promo de fin de año «Motivos para celebrar, razones para ganar». Por cada Gs. 50.000 de compras, los clientes generaban cupones electrónicos para un sorteo con Smart TV, remeras oficiales de la Selección Paraguaya y vales de compra.\n\nLa campaña sumó un taller de chocotone y pannetone y una colecta solidaria con Asoleu para niños con cáncer, del 18 de noviembre al 15 de diciembre de 2025.' },
+    'amistad': { insp: '', ctx: 'Semana de la Amistad en Box, del 24 al 30 de julio. La campaña reunió promociones en accesorios (billeteras, bolsos y carteras), botellas, termos y perfumes, con una estética de recortes y collage.' },
+    'colonia': { insp: '', ctx: 'Colonia de vacaciones gratuita para chicos, el domingo 20 y el sábado 26 de julio, con espacio de arte, manualidades, baile y cuentacuentos. Se realizó en Box M.R.A. y Box Luque, con inscripción gratuita desde el link de la bio.' },
+    'mama-papa': { insp: '', ctx: 'Promo «100 razones para celebrar a Mamá y Papá», del 8 de mayo al 30 de junio de 2025. Por cada Gs. 50.000 de compra se generaba un cupón para un sorteo con viajes en crucero, vouchers de peluquería y cena, vales de compra y alojamientos.\n\nEn el local se armó una escenografía de crucero con el lema «Tus compras pueden llevarte al Caribe».' },
+    'halloween': { insp: '', ctx: 'Campaña «Dulce Halloween» del 31 de octubre al 2 de noviembre, con ofertas en golosinas y artículos de disfraz. Incluyó una fiesta de disfraces con premios el sábado 1 de noviembre en Box CDE San José y la ambientación del local.' },
+    'beauty-day': { insp: '', ctx: 'Evento «Beauty Day»: una mañana de brunch, skin care, clase de automaquillaje, cócteles y buena música el 5 de octubre a las 10:00 en Box CDE San José, con cupos limitados.' },
+    'enamorados': { insp: '', ctx: 'Campaña «Tu Duo perfecto para enamorar» para el Día de los Enamorados en Stock. Propuso ideas de regalo, como bombones y vino, y un sorteo con estadía y cena en el Hotel Guaraní, un kit de asado para dos personas y un vale de compras de Gs. 300.000. Cerró con la publicación de los ganadores.' },
+    'pascuas': { insp: '', ctx: 'Especial Pascuas en Stock, con promociones hasta el 5 de abril: chipas rellenas, rosca de Pascua y un menú de Semana Santa. La campaña incluyó el folleto de ofertas.' },
+    'dia-padre': { insp: '', ctx: 'Ofertas quincenales «Lo mejor para el Super Papá», válidas hasta el 14 de junio, que compartieron espacio con la campaña mundialista «¡Equipate con todo para alentar a Paraguay!». Incluyó folleto de ofertas y piezas para redes con artículos para alentar a la Selección.' }
+  };
+
+  var SETS = { campanas: [], logos: [], ilustraciones: [] };
+  CAMPS.forEach(function (c) {
+    SETS.campanas.push({
+      t: c[0], meta: [c[1]].concat(c[2]).join(' · '), sub: c[4], cols: KV_COLS,
+      views: true, ctx: (TEXT[c[3]] || {}).ctx || '', insp: (TEXT[c[3]] || {}).insp || '',
+      imgs: [
+        { n: 'c-' + c[3] + '-kv', alt: 'Key visual de ' + c[0], cap: 'Key visual' },
+        { n: 'c-' + c[3] + '-redes', alt: 'Piezas para redes sociales de ' + c[0], cap: 'Redes sociales' }
+      ]
+    });
+  });
+  LOGOS.forEach(function (l) {
+    SETS.logos.push({ t: l[0], meta: 'Logo de campaña', sub: '', imgs: [{ n: 'l-' + l[1], alt: 'Logo ' + l[0], bg: l[2] }] });
+  });
+  ILUS.forEach(function (alt, i) {
+    SETS.ilustraciones.push({ t: 'Ilustración', meta: 'Estilo vectorial', sub: '', imgs: [{ n: 'i-' + (i + 1), alt: alt }] });
+  });
+  SETS.ilustraciones.push({
+    t: 'Campaña Mundialista 2026', meta: 'Stock Supermercados · Coleccionables', sub: 'Diseño e ilustración de coleccionables.',
+    cols: 'minmax(0, 7fr) minmax(0, 4fr)',
+    imgs: [
+      { n: 'm-foto', alt: 'Termos y vasos negros con el yaguareté y el lema #VamosParaguay sobre el césped de un estadio', cap: 'Coleccionables' },
+      { n: 'm-logos', alt: 'Dos versiones de la ilustración del yaguareté con la bandera de Paraguay y el texto #VamosParaguay', cap: 'Ilustración' }
+    ]
+  });
+
+  /* ---------- Grillas ---------- */
+  $('#grid-campanas').innerHTML = CAMPS.map(function (c, i) {
+    return '<li><button class="card" type="button" data-set="campanas" data-i="' + i + '">' +
+      '<span class="thumb"><img src="' + IMG('c-' + c[3] + '-kv') + '" alt="Key visual de ' + c[0] + '" loading="lazy" decoding="async"></span>' +
+      '<span class="cap"><span class="t">' + c[0] + '</span><span class="b">' + c[1] + '</span><span class="g">' + c[2].join(' · ') + '</span></span>' +
+      '</button></li>';
+  }).join('');
+  $('#grid-logos').innerHTML = LOGOS.map(function (l, i) {
+    return '<li><button class="logo-tile" type="button" data-bg="' + l[2] + '" data-set="logos" data-i="' + i + '">' +
+      '<img src="' + IMG('l-' + l[1]) + '" alt="Logo ' + l[0] + '" loading="lazy" decoding="async"></button>' +
+      '<p class="lcap">' + l[0] + '</p></li>';
+  }).join('');
+  $('#grid-ilus').innerHTML = ILUS.map(function (alt, i) {
+    return '<li><button class="ilu" type="button" data-set="ilustraciones" data-i="' + i + '">' +
+      '<img src="' + IMG('i-' + (i + 1)) + '" alt="' + alt + '" loading="lazy" decoding="async"></button></li>';
+  }).join('');
+
+  /* ---------- Pestañas ---------- */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.panel'));
+  var tabIds = tabs.map(function (t) { return t.dataset.tab; });
+  function selectTab(id, animate) {
+    tabs.forEach(function (t) {
+      var on = t.dataset.tab === id;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+    });
+    panels.forEach(function (p) {
+      var on = p.dataset.panel === id;
+      p.hidden = !on;
+      p.classList.remove('anim');
+      if (on && animate) { void p.offsetWidth; p.classList.add('anim'); }
+    });
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { selectTab(t.dataset.tab, true); });
+    t.addEventListener('keydown', function (e) {
+      var k = e.key, n = -1;
+      if (k === 'ArrowRight') n = (i + 1) % tabs.length;
+      else if (k === 'ArrowLeft') n = (i - 1 + tabs.length) % tabs.length;
+      if (n > -1) { e.preventDefault(); selectTab(tabs[n].dataset.tab, true); tabs[n].focus(); }
+    });
+  });
+  function fromHash() {
+    var h = location.hash.replace('#', '');
+    if (tabIds.indexOf(h) > -1) {
+      selectTab(h, false);
+      var s = document.getElementById('trabajos');
+      if (s) s.scrollIntoView();
+    }
+  }
+  window.addEventListener('hashchange', fromHash);
+  fromHash();
+
+  /* ---------- Visor ---------- */
+  var lb = $('#lb'), body = $('#lb-body'), cur = null, last = null, view = 'piezas', elTabs = $('#lb-tabs');
+  var elT = $('#lb-title'), elM = $('#lb-meta'), elS = $('#lb-sub');
+  var bPrev = $('#lb-prev'), bNext = $('#lb-next'), bClose = $('#lb-close');
+
+  var VIEWS = [['piezas', 'Piezas'], ['ctx', 'Contexto'], ['insp', 'Inspiración']];
+  function renderTabs(it) {
+    elTabs.hidden = !it.views;
+    if (!it.views) return;
+    elTabs.replaceChildren.apply(elTabs, VIEWS.map(function (v) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'lb-tab'; b.dataset.view = v[0]; b.textContent = v[1];
+      b.setAttribute('aria-pressed', view === v[0] ? 'true' : 'false');
+      return b;
+    }));
+  }
+  elTabs.addEventListener('click', function (e) {
+    var b = e.target.closest('.lb-tab');
+    if (!b) return;
+    view = b.dataset.view;
+    render();
+    var on = elTabs.querySelector('[aria-pressed="true"]');
+    if (on) on.focus();
+  });
+  function makeFig(im, withCap) {
+    var f = document.createElement('figure');
+    var img = document.createElement('img');
+    img.src = IMG(im.n); img.alt = im.alt; img.decoding = 'async';
+    if (im.bg) img.style.background = im.bg === 'w' ? '#fff' : '#151515';
+    f.appendChild(img);
+    if (withCap && im.cap) { var c = document.createElement('figcaption'); c.textContent = im.cap; f.appendChild(c); }
+    return f;
+  }
+  function makeText(it) {
+    var box = document.createElement('div');
+    box.className = 'lb-text';
+    var h = document.createElement('h4');
+    h.textContent = view === 'ctx' ? 'Contexto' : 'Inspiración';
+    var lead = document.createElement('p');
+    lead.className = 'lead';
+    lead.textContent = view === 'ctx' ? 'De qué se trató la campaña' : 'Por qué elegí esta dirección creativa';
+    box.appendChild(h); box.appendChild(lead);
+    var txt = it[view] || '';
+    if (!txt) {
+      var e = document.createElement('p');
+      e.className = 'txt empty';
+      e.textContent = view === 'ctx' ? 'Descripción en preparación.' : 'Próximamente: acá cuento por qué elegí esta dirección creativa.';
+      box.appendChild(e);
+    } else {
+      txt.split('\n\n').forEach(function (para) {
+        var p = document.createElement('p');
+        p.className = 'txt'; p.textContent = para;
+        box.appendChild(p);
+      });
+    }
+    return box;
+  }
+  function render() {
+    var list = SETS[cur.set], it = list[cur.i];
+    elT.textContent = it.t;
+    elM.textContent = it.meta;
+    elS.textContent = it.sub || '';
+    elS.hidden = !it.sub;
+    renderTabs(it);
+    if (it.views && view !== 'piezas') {
+      body.className = 'lb-body text';
+      body.style.setProperty('--cols', 'minmax(0, 3fr) minmax(0, 5fr)');
+      body.replaceChildren(makeFig(it.imgs[0], false), makeText(it));
+    } else {
+      body.className = 'lb-body ' + (it.imgs.length > 1 ? 'two' : 'one');
+      body.style.setProperty('--cols', it.cols || KV_COLS);
+      body.replaceChildren.apply(body, it.imgs.map(function (im) { return makeFig(im, true); }));
+    }
+    var many = list.length > 1;
+    bPrev.hidden = !many; bNext.hidden = !many;
+    lb.scrollTop = 0;
+  }
+  function openLb(set, i, trigger) {
+    cur = { set: set, i: i }; last = trigger; view = 'piezas';
+    render();
+    lb.hidden = false;
+    try { document.documentElement.style.overflow = 'hidden'; } catch (e) {}
+    bClose.focus();
+  }
+  function closeLb() {
+    lb.hidden = true;
+    try { document.documentElement.style.overflow = ''; } catch (e) {}
+    if (last && last.focus) last.focus();
+  }
+  function step(d) {
+    var n = SETS[cur.set].length;
+    cur.i = (cur.i + d + n) % n;
+    render();
+  }
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-set]');
+    if (b) { openLb(b.dataset.set, parseInt(b.dataset.i, 10), b); return; }
+    if (!lb.hidden && (e.target === lb || e.target.id === 'lb-in' || e.target.id === 'lb-body')) closeLb();
+  });
+  bClose.addEventListener('click', closeLb);
+  bPrev.addEventListener('click', function () { step(-1); });
+  bNext.addEventListener('click', function () { step(1); });
+  document.addEventListener('keydown', function (e) {
+    if (lb.hidden) return;
+    if (e.key === 'Escape') { closeLb(); }
+    else if (e.key === 'ArrowLeft' && !bPrev.hidden) { step(-1); }
+    else if (e.key === 'ArrowRight' && !bNext.hidden) { step(1); }
+    else if (e.key === 'Tab') {
+      var f = Array.prototype.slice.call(lb.querySelectorAll('button')).filter(function (x) { return x.offsetParent !== null; });
+      var i = f.indexOf(document.activeElement);
+      if (e.shiftKey && i <= 0) { e.preventDefault(); f[f.length - 1].focus(); }
+      else if (!e.shiftKey && i === f.length - 1) { e.preventDefault(); f[0].focus(); }
+      else if (i === -1) { e.preventDefault(); f[0].focus(); }
+    }
+  });
+
+  /* ---------- Copiar teléfono ---------- */
+  var copyBtn = $('#copy-phone'), phone = $('#phone'), note = $('#copied');
+  copyBtn.addEventListener('click', function () {
+    var txt = phone.textContent;
+    function fallback() {
+      var r = document.createRange(); r.selectNodeContents(phone);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      note.textContent = 'Número seleccionado. Copialo con Ctrl+C o con mantener presionado.';
+    }
+    try {
+      navigator.clipboard.writeText(txt).then(function () { note.textContent = 'Número copiado.'; }, fallback);
+    } catch (e) { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>
